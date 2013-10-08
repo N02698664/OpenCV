@@ -17,3 +17,23 @@ http://pyinotify.sourceforge.net/doc-v07/index.html
 
 
 found in inotify-tools package in Ubuntu
+Inotify is a great way to monitor file system changes, and with the great tool inotifywait ( found in inotify-tools package in Ubuntu) it’s even utilizeable in Bash scripts.
+
+?
+1
+2
+3
+4
+5
+6
+7
+#!/bin/bash
+while true; do
+ 
+inotifywait -e create /home/user/pdfs  && \
+./watermark_all.sh
+ 
+done
+Inotifywait creates an inotify watch on the directory /home/user/pdfs and waits until a file is created. In this event, inotifywait terminates and the ./watermark_all.sh script from above will be executed.
+
+Great – Immediate results
