@@ -11,3 +11,9 @@ to determine what is processed.
 
 
 https://opencv-python-tutroals.readthedocs.org/en/latest/index.html
+
+
+http://pyinotify.sourceforge.net/doc-v07/index.html
+
+
+found in inotify-tools package in Ubuntu
