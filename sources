@@ -1,5 +1,4 @@
 
-
 https://opencv-python-tutroals.readthedocs.org/en/latest/index.html
 
 
@@ -35,3 +34,10 @@ create share to upload photos. monitor with pyinotifywait.
 using OpenCV with a webcam - should be a good place to start for code ideas.
 also mentions OpenCV 2.3 vs OpenCV 2.4 and needing to manually install the facial recognition libraries.
 http://thinkrpi.wordpress.com/2013/05/22/opencv-and-camera-board-csi/
+
+
+http://www.simplecv.org/
+
+wget https://raw.github.com/jayrambhia/Install-OpenCV/master/Ubuntu/2.4/opencv2_4_6_1.sh
+chmod +x opencv2_4_6_1.sh
+./opencv2_4_5.sh
