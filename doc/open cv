@@ -1,3 +1,8 @@
 I initially installed OpenCV from the apt-get sources but found out that version of OpenCV available through apt-get for
 ARM processors is only the 2.3 version and that version does not include the facial recognition libraries by default.
 
+I installed the facial recognition libraries using cmake and the walkthrough from here:
+http://thinkrpi.wordpress.com/2013/04/05/step-3-install-softwares-for-webcam-and-computer-vision/
+
+
+
