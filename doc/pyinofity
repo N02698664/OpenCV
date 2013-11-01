@@ -1,0 +1,2 @@
+I want to use pyinotify to monitor my Samba share to run a Python script that uses OpenCV for processing picture files.
+
