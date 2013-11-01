@@ -1,2 +1,51 @@
 I want to use pyinotify to monitor my Samba share to run a Python script that uses OpenCV for processing picture files.
 
+I used the information from these two sources to download, install, and test pyinotify.
+
+https://github.com/seb-m/pyinotify/wiki
+http://pyinotify.sourceforge.net/
+
+Install Pyinotify
+
+Make sure easy_install is installed:
+ sudo apt-get install python-setuptools
+Install pyinotify:
+ sudo easy_install pyinotify
+Check pyinotify is working alright
+ python -m pyinotify -v /tmp  # This will run pyinotify and watch /tmp
+ 
+This spammed the terminal with a ton of information since the files in the /tmp directory are being changed constantly
+pyinotify is installed and working
+
+
+this is an interesting script template for inotify - I think that I could modify it to my needs.
+
+from: http://blog.lagentz.com/general/automate-your-shell-scripts-using-inotify-and-inotifywait/
+
+#!/bin/bash
+while true; do
+ 
+inotifywait -e create /home/user/pdfs  && \
+./watermark_all.sh
+ 
+done
+
+Inotifywait creates an inotify watch on the directory /home/user/pdfs (change to Samba folder or sub folder)
+and waits until a file is created. In this event, inotifywait terminates and the 
+./watermark_all.sh script from above will be executed.
+
+use with pyinotify - not just inotify
+
+change script to call python -m xxx.py which will be created similar to the example from http://pyinotify.sourceforge.net/
+then move the scritp to /etc/init.d/ and use chmod + to the xxx.sh file.
+Like in the example:
+The easiest way is simply adding the script to /etc/init.d and then running the command
+
+chmod +x go.py
+update-rc.d go.py defaults
+
+from: http://superuser.com/questions/155476/how-do-i-make-a-script-run-upon-startup-of-the-ubuntu-machine 
+
+
+convert to calling the python OpenCV program for facial recognition when a new file is created in the OpenCV directory
+using the IN_CREATE eventcodes class.....
