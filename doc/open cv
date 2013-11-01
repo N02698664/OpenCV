@@ -6,3 +6,15 @@ http://thinkrpi.wordpress.com/2013/04/05/step-3-install-softwares-for-webcam-and
 
 
 
+Eventually after some more research I found an install script that installed a more current complete version of OpenCV
+using these commands.
+wget https://raw.github.com/jayrambhia/Install-OpenCV/master/Ubuntu/2.4/opencv2_4_6_1.sh
+chmod +x opencv2_4_6_1.sh
+./opencv2_4_6_1.sh
+
+This seriously took forever but now I should be able to use the facial recognition libraries that are included in OpenCV.
+
+I also installed SimpleCV to play with the SimpleCV shell - this required that I install a ton of python math libraries.
+I might try and work something with one of the web cam projects to try and use the SimpleCV functions....
+
+[check browser histories for website addresses.]
