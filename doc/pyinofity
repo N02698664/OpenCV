@@ -37,7 +37,7 @@ and waits until a file is created. In this event, inotifywait terminates and the
 use with pyinotify - not just inotify
 
 change script to call python -m xxx.py which will be created similar to the example from http://pyinotify.sourceforge.net/
-then move the scritp to /etc/init.d/ and use chmod + to the xxx.sh file.
+then move the script to /etc/init.d/ and use chmod + to the xxx.sh file.
 Like in the example:
 The easiest way is simply adding the script to /etc/init.d and then running the command
 
