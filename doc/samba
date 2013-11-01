@@ -2,3 +2,33 @@ I wanted to create a Samba share to allow me to upload files into a watched fold
 
 I originally used the setup a Windows file server walk-through from Simon the Pi Man @
 
+http://simonthepiman.com/how_to_setup_windows_file_server_wheezy.php
+
+I was able to install Samba with sudo apt-get install samba, samba-common-bin, smbclient.
+
+I then tried to create a new Samba share using the parameters that Simon used modified to my needs in smb.conf:
+
+Uncomment out security = user by removing the # from the start of the line:
+
+[OpenCV]
+   comment = OpenCV Share
+   path = /users/pi/OpenCV
+   writeable = Yes
+   create mask = 0777
+   directory mask = 0777
+   browseable = Yes
+   public = yes
+   guest ok = no
+   valid users = pi
+   
+and added the password for pi into the Samba database: smbpasswd -a pi
+   
+but despite being able to see the folder on the network - I wasn't ever able to map it as a network drive - it wouldn't
+take my user name or password.
+
+After a little bit of research I found that the default Samba share is to share the users home directories
+somewhere - can't find it now - check my browser histories.
+
+try this again....
+http://www.raspberrypi.org/phpBB3/viewtopic.php?f=28&t=58608&p=439867&hilit=samba+share#p439867
+
