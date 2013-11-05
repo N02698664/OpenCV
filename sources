@@ -42,3 +42,20 @@ chmod +x opencv2_4_6_1.sh
 ./opencv2_4_5.sh
 
 quick python tutorial: http://www.sthurlow.com/python/lesson05/
+
+facial recognition:
+http://docs.opencv.org/trunk/modules/contrib/doc/facerec/facerec_tutorial.html
+
+python wrapper for face landmark binaries.
+https://pypi.python.org/pypi/xbob.flandmark
+
+traing OpenCV:
+http://coding-robin.de/2013/07/22/train-your-own-opencv-haar-classifier.html
+http://answers.opencv.org/question/313/facial-feature-detection/
+http://docs.opencv.org/modules/objdetect/doc/objdetect.html
+http://docs.opencv.org/modules/highgui/doc/highgui.html
+
+http://answers.opencv.org/question/1342/python-facerecognizer-questions/
+
+video face recognition:
+http://bytefish.de/blog/videofacerec/
