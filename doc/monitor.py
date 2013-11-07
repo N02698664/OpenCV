@@ -22,7 +22,7 @@ mask = EventsCodes.IN_CREATE  # watched events
         
 notifier = Notifier(wm, CVProcessing())
 
-wdd = wm.add_watch('/users/pi/OpenCV', mask, rec=False)
+wdd = wm.add_watch('/home/pi/OpenCV', mask, rec=False)
 
 while True:  # loop forever
     try:
