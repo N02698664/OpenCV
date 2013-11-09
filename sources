@@ -36,10 +36,17 @@ http://thinkrpi.wordpress.com/2013/05/22/opencv-and-camera-board-csi/
 
 
 http://www.simplecv.org/
+install simplecv
+https://github.com/sightmachine/SimpleCV/blob/develop/doc/HOWTO-Install%20on%20RaspberryPi.rst
+sygwrite error
+Do this to install svgwrite:
+1: Open LXTerminal
+2: write: sudo pip install svgwrite
 
+install the current version of OpenCV
 wget https://raw.github.com/jayrambhia/Install-OpenCV/master/Ubuntu/2.4/opencv2_4_6_1.sh
 chmod +x opencv2_4_6_1.sh
-./opencv2_4_5.sh
+./opencv2_4_6_1.sh
 
 quick python tutorial: http://www.sthurlow.com/python/lesson05/
 
