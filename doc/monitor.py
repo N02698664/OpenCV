@@ -13,7 +13,7 @@ class CVProcessing(ProcessEvent):
 
     def process_IN_CREATE(event):
         """
-        This method process a specific kind of event (IN_DELETE). event
+        This method process a specific kind of event (IN_CREATE). event
         is an instance of Event.
         """
         python -m hello_world.py
