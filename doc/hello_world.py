@@ -1,4 +1,5 @@
-import OS
+import os
+import sys
 
-print "Hello World."
+sys.stdout.write("Hello World.\n")
 
