@@ -16,7 +16,7 @@ class CVProcessing(ProcessEvent):
         This method process a specific kind of event (IN_CREATE). event
         is an instance of Event.
         """
-        python -m hello_world.py
+        execfile("hello_world.py")
 
 mask = EventsCodes.IN_CREATE  # watched events
         
