@@ -44,8 +44,7 @@ The easiest way is simply adding the script to /etc/init.d and then running the 
 chmod +x go.py
 update-rc.d go.py defaults
 
-from: http://superuser.com/questions/155476/how-do-i-make-a-script-run-upon-startup-of-the-ubuntu-machine 
-
+from: http://www.stuffaboutcode.com/2012/06/raspberry-pi-run-program-at-start-up.html
 
 convert to calling the python OpenCV program for facial recognition when a new file is created in the OpenCV directory
 using the IN_CREATE eventcodes class.....
