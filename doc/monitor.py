@@ -1,28 +1,17 @@
 import os
-from pyinotify import WatchManager, Notifier, ThreadedNotifier, EventsCodes, ProcessEvent
+import pyinotify
 
-wm = WatchManager()
+wm = pyinotify.WatchManager() #create a watch manager
+mask = pyinotify.IN_CREATE #watched event
 
 class CVProcessing(ProcessEvent):
-    def __init__(self):
-        """
-        Does nothing in this case, but you can as well implement this constructor
-        and you don't need to explicitely call its base class constructor.
-        """
-        pass
-
-    def process_IN_CREATE(event):
-        """
-        This method process a specific kind of event (IN_CREATE). event
-        is an instance of Event.
-        """
-        execfile("hello_world.py")
-
-mask = EventsCodes.IN_CREATE  # watched events
+    def process_IN_CREATE(self, event):
+        execfile("hello_world.py")  #specialized event processor for any new file created
+                                    #in the watched directory
         
-notifier = Notifier(wm, CVProcessing())
+notifier = pyinotify.Notifier(wm, CVProcessing()) #creates a notification object
 
-wdd = wm.add_watch('/home/pi/OpenCV', mask, rec=False)
+wdd = wm.add_watch('/home/pi/OpenCV', mask, rec=False) #creates a watch on the OpenCV folder
 
 while True:  # loop forever
     try:
