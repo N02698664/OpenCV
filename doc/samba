@@ -32,3 +32,6 @@ somewhere - can't find it now - check my browser histories.
 try this again....
 http://www.raspberrypi.org/phpBB3/viewtopic.php?f=28&t=58608&p=439867&hilit=samba+share#p439867
 
+the default user shares were only readable initially - but I had to change the writeable variable to yes and changed
+the masks to 0777.
+
