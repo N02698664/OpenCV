@@ -26,14 +26,12 @@ and added the password for pi into the Samba database: smbpasswd -a pi
 but despite being able to see the folder on the network - I wasn't ever able to map it as a network drive - it wouldn't
 take my user name or password.
 
-This worked correctly now.
-
-After a little bit of research I found that the default Samba share is to share the users home directories
-somewhere - can't find it now - check my browser histories.
-
-try this again....
+This might be helpful for trying again....
 http://www.raspberrypi.org/phpBB3/viewtopic.php?f=28&t=58608&p=439867&hilit=samba+share#p439867
 
-the default user shares were only readable initially - but I had to change the writeable variable to yes and changed
-the masks to 0777.
+Instead to make this work for now I used the default users home folders share.
+
+the default user shares were only readable initially - I had to change the writeable variable to yes and changed
+the masks to 0777 so that I could connect to the Raspberry Pi and just navigate down to the OpenCV subfolder and create
+new files for pyinotify to use.
 
