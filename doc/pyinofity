@@ -14,11 +14,9 @@ Install pyinotify:
 Check pyinotify is working alright
  python -m pyinotify -v /tmp  # This will run pyinotify and watch /tmp
  
-This spammed the terminal with a ton of information since the files in the /tmp directory are being changed constantly
-pyinotify is installed and working
+This showed any files that were changing in the /tmp directory
 
-
-this is an interesting script template for inotify - I think that I could modify it to my needs.
+I found an interesting shell script template for inotify - I think that I could modify it to my needs.
 
 from: http://blog.lagentz.com/general/automate-your-shell-scripts-using-inotify-and-inotifywait/
 
@@ -36,13 +34,9 @@ and waits until a file is created. In this event, inotifywait terminates and the
 
 use with pyinotify - not just inotify
 
-change script to call python -m xxx.py which will be created similar to the example from http://pyinotify.sourceforge.net/
-then move the script to /etc/init.d/ and use chmod + to the xxx.sh file.
-Like in the example:
-The easiest way is simply adding the script to /etc/init.d and then running the command
-
-chmod +x go.py
-update-rc.d go.py defaults
+I changed the script to call python monitor.py then moved the script to /etc/init.d/ and 
+used chmod +x to the monitor.sh file.
+update-rc.d monitor.sh defaults
 
 from: http://www.stuffaboutcode.com/2012/06/raspberry-pi-run-program-at-start-up.html
 
