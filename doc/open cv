@@ -4,7 +4,7 @@ ARM processors is only the 2.3 version and that version does not include the fac
 I installed the facial recognition libraries using cmake and the walkthrough from here:
 http://thinkrpi.wordpress.com/2013/04/05/step-3-install-softwares-for-webcam-and-computer-vision/
 
-
+I had a hard time making this work; it seemed to compile but didn't really seem to actually work when tested.
 
 Eventually after some more research I found an install script that installed a more current complete version of OpenCV
 using these commands.
@@ -12,9 +12,15 @@ wget https://raw.github.com/jayrambhia/Install-OpenCV/master/Ubuntu/2.4/opencv2_
 chmod +x opencv2_4_6_1.sh
 ./opencv2_4_6_1.sh
 
-This seriously took forever but now I should be able to use the facial recognition libraries that are included in OpenCV.
+This is a Github project where someone creates a new install script for the current version of OpenCV
+
+This took all night but now I should be able to use the facial recognition libraries that are included in OpenCV.
 
 I also installed SimpleCV to play with the SimpleCV shell - this required that I install a ton of python math libraries.
 I might try and work something with one of the web cam projects to try and use the SimpleCV functions....
 
-[check browser histories for website addresses.]
+When the SimpleCV shell errored on start up I had to install some extra python libraries using the command
+sudo pip svg install.
+
+I believe that pip was another tool installed with the python-tools package similar to the easy-install tool that I
+installed for pyinotify.
