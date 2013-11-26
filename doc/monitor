@@ -1,4 +1,5 @@
-I want to use pyinotify to monitor my Samba share to run a Python script that uses OpenCV for processing picture files.
+I want to use pyinotify to monitor my Samba share to run a Python script that uses OpenCV or SimpleCV 
+for processing picture files.
 
 I used the information from these two sources to download, install, and test pyinotify.
 
@@ -16,6 +17,21 @@ Check pyinotify is working alright
  
 This showed any files that were changing in the /tmp directory
 
+The monitor program was written similar to the example from:
+http://pyinotify.sourceforge.net/
+
+but I needed to change it to the form used in the examples from:
+https://github.com/seb-m/pyinotify/wiki
+using the pyinotify.class.function form instead of how it is written in the source forge version.
+
+I was able to run the monitor.py script and get the hello_world.py script to write hello world to the terminal
+whenever I created a new file in the OpenCV folder. This also hung up the terminal and prevented me from executing
+anything else until I used ctrl+C to break the program execution.
+
+I plan to convert to calling the python OpenCV program for facial recognition when a new file is created
+in the OpenCV directory using the monitor.py program.
+
+First I would like to change the monitor.py to a background program that is started during startup.
 I found an interesting shell script template for inotify - I think that I could modify it to my needs.
 
 from: http://blog.lagentz.com/general/automate-your-shell-scripts-using-inotify-and-inotifywait/
@@ -36,24 +52,12 @@ use with pyinotify - not just inotify
 
 I changed the script to call python monitor.py then moved the script to /etc/init.d/ and 
 used chmod +x to the monitor.sh file.
-update-rc.d monitor.sh defaults
+Then I used update-rc.d monitor.sh defaults
 
 I tried to use this script as a startup script but it only managed to hang the startup of Raspbian
 
 After a while I was able to find this blog to startup & daemonize python script
 http://blog.scphillips.com/2013/07/getting-a-python-script-to-run-in-the-background-as-a-service-on-boot/
 
-I was finally able to get my monitor.sh setup as a background service using the start-stop-daemon tools.
-
-The monitor program was written similar to the example from:
-http://pyinotify.sourceforge.net/
-
-but I needed to change it to the form used in the examples from:
-https://github.com/seb-m/pyinotify/wiki
-using the pyinotify.class.function form
-
-I was able to run the monitor.py script and get the hello_world.py script to write hello world to the terminal
-whenever I created a new file in the OpenCV folder.
-
-I plan to convert to calling the python OpenCV program for facial recognition when a new file is created
-in the OpenCV directory using the monitor.py program.
+I was finally able to get my monitor.py setup as a background service using the start-stop-daemon tools and
+the updated monitor.sh
