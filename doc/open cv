@@ -24,3 +24,10 @@ sudo pip svg install.
 
 I believe that pip was another tool installed with the python-tools package similar to the easy-install tool that I
 installed for pyinotify.
+
+The intial tests of my process.py module wrote out a supposedly processed file in my monitored diretory but there are no
+rectangles actually on the processed image.
+
+I am going to train a haar cascade to recognize my face only, try moving the haar cascade .xml files into the working
+directory with my process.py or use the full path name to the .xml file, and research the file handling capabilities of
+python to process more than 1 file at a time.
