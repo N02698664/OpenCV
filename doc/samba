@@ -1,6 +1,6 @@
 I wanted to create a Samba share to allow me to upload files into a watched folder from any Windows machine.
 
-I originally used the setup a Windows file server walk-through from Simon the Pi Man @
+I originally used the setup for a Windows file server walk-through from Simon the Pi Man @
 
 http://simonthepiman.com/how_to_setup_windows_file_server_wheezy.php
 
@@ -25,9 +25,6 @@ and added the password for pi into the Samba database: smbpasswd -a pi
    
 but despite being able to see the folder on the network - I wasn't ever able to map it as a network drive - it wouldn't
 take my user name or password.
-
-This might be helpful for trying again....
-http://www.raspberrypi.org/phpBB3/viewtopic.php?f=28&t=58608&p=439867&hilit=samba+share#p439867
 
 Instead to make this work for now I used the default users home folders share.
 
