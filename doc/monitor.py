@@ -8,7 +8,7 @@ mask = pyinotify.IN_CREATE
 
 class CVProcessing(pyinotify.ProcessEvent):
 	def process_IN_CREATE(self, event):
-		execfile("/home/pi/hello_world.py")
+		execfile("/home/pi/process.py")
 
 notifier = pyinotify.Notifier(wm, CVProcessing(), timeout=10)
 
